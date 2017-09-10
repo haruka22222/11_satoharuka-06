@@ -13,7 +13,7 @@ public class ColLesson04 {
 		Scanner sc = new Scanner(System.in);
 		String input = sc.nextLine();
 		int index = 0;
-		try{
+		try {
 			while (!input.equals("e")){
 				String[] tmp = new String[2];
 				tmp = input.split(" ");
@@ -23,16 +23,16 @@ public class ColLesson04 {
 				System.out.println("次の英単語と日本語を入力して下さい。\"e\"で終了します。");
 				input = sc.nextLine();
 			}
-	}catch(ArrayIndexOutOfBoundsException e){
+	} catch (ArrayIndexOutOfBoundsException e) {
 		System.out.println("登録制限を超えました。登録済みのデータは以下になります。");
 	}
 
-	for(Word wd : words){
+	for (Word wd : words){
 		System.out.println(wd);
 	}
 	System.out.println(index + "件、登録しました。");
-		}
 	}
+}
 
 
 

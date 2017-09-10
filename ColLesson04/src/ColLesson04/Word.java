@@ -5,6 +5,7 @@ public class Word {
 	private String japanese;
 
 	public Word(String english, String japanese) {
+		super();
 		this.english = english;
 		this.japanese = japanese;
 	}
