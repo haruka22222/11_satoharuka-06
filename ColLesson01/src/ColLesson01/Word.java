@@ -8,8 +8,6 @@ public class Word{
 		this.japanese = japanese;
 		this.english = english;
 }
-	public Word() {
-}
 
 
 	public String getJapanese() {
@@ -26,13 +24,13 @@ public class Word{
 		this.english = english;
 	}
 
-
-	public void printWord() {
-		System.out.println(
-				  this.getJapanese()
-				+ this.getEnglish()
-		);
-	}
+//
+//	public void printWord() {
+//		System.out.println(
+//				  this.getJapanese()
+//				+ this.getEnglish()
+//		);
+//	}
 
 
 }

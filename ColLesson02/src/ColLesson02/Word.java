@@ -8,15 +8,17 @@ public class Word{
 		this.japanese = japanese;
 		this.english = english;
 	}
-	public Word() {
+
+	public String toString() {
+			return "英単語:" + english + "日本語:" + japanese;
 	}
+
 	public String getJapanese() {
 		return this.japanese;
 	}
 	public void setJapanese(String japanese) {
 		this.japanese = japanese;
 	}
-
 	public String getEnglish() {
 		return this.english;
 	}
@@ -24,15 +26,13 @@ public class Word{
 		this.english = english;
 	}
 
-	public void printWord() {
-		System.out.println(
-				  this.getJapanese()
-				+ this.getEnglish()
-		);
-	}
+//	public void printWord() {
+//		System.out.println(
+//				  this.getJapanese()
+//				+ this.getEnglish()
+//		);
+//	}
 
-	public String toString(){
-		return "英語:"+this.english +" "+"日本語："+this.japanese;
-		}
+
 
 }

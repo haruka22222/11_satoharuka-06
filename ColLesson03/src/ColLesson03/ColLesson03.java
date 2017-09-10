@@ -1,6 +1,5 @@
 package ColLesson03;
 
-
 import java.util.Scanner;
 
 public class ColLesson03 {
@@ -8,42 +7,26 @@ public class ColLesson03 {
 	Word[] words = new Word[5];
 
 	System.out.println("英単語と日本語をスペースで区切って入力して下さい。");
-	Scanner scan = new Scanner(System.in);
+	Scanner sc = new Scanner(System.in);
+	String input = sc.nextLine();
+	int index = 0;
 
-	String eng = scan.next();
-	String jpn = scan.next();
-
-	words[0] = new Word(eng, jpn);
-
-
-	int i = 1;
-	for(;;i++) {
-		System.out.println("次の英単語と日本語を入力して下さい。\"e\"で終了します。");
-
-		eng = scan.next();
-		if(eng.equals("e")) {
-		break;
+	try{
+		while(!input.equals("e")){
+			String[] tmp = new String[2];
+			tmp = input.split(" ");
+			Word col = new Word(tmp[0], tmp[1]);
+			words[index] = col;
+			index++;
+			System.out.println("次の英単語と日本語を入力して下さい。\"e\"で終了します。");
+			input = sc.nextLine();
 		}
-
-		jpn = scan.next();
-
-		if(i >= words.length) {
-			System.out.println("登録制限を越えました。登録済みのデータは以下になります。");
-			break;
-		}
-
-		words[i] = new Word(eng, jpn);
-		}
-
-		scan.close();
-		display(words, i);
-		System.out.println(i + "件、登録しました。");
+	}catch (ArrayIndexOutOfBoundsException e){
+		System.out.println("登録制限を超えました。登録済みのデータは以下になります。");
 	}
-
-	private static void display(Word[] words, int length) {
-		for(int i=0;i<length;i++) {
-			Word word = words[i];
-			System.out.println(word.toString());
-		}
+	for (int i = 0; i <index; i++){
+		System.out.println(words[i]);
+	}
+	System.out.println(index+"件、登録しました。");
 	}
 }
